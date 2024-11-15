@@ -1,0 +1,5 @@
+django
+djangorestframework
+Pillow
+web3
+python-dotenv

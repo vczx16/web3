@@ -1,0 +1,38 @@
+Watching for file changes with StatReloader
+INFO 2024-11-10 19:58:39,400 autoreload 45823 8062391040 Watching for file changes with StatReloader
+INFO 2024-11-10 19:59:44,826 views 45823 6198308864 Generating card with prompt: a majestic fire dragon pokemon, cute and powerful
+INFO 2024-11-10 19:59:44,826 views 45823 6198308864 Created AICardGenerator instance
+INFO 2024-11-10 19:59:44,826 ai_service 45823 6198308864 Checking API key...
+INFO 2024-11-10 19:59:44,826 ai_service 45823 6198308864 Using API URL: https://api.stability.ai/v1/generation/stable-diffusion-xl-1024-v1-0/text-to-image
+INFO 2024-11-10 19:59:44,826 ai_service 45823 6198308864 Generated base prompt: a majestic fire dragon pokemon, cute and powerful, trading card game style, pokemon card layout, mag...
+INFO 2024-11-10 19:59:44,826 ai_service 45823 6198308864 Headers prepared (excluding auth token)
+ERROR 2024-11-10 19:59:44,826 ai_service 45823 6198308864 Error generating image: 'AICardGenerator' object has no attribute 'negative_prompt'
+Traceback (most recent call last):
+  File "/Users/yaya/ai_memo_web3/backend/ai_card_generator/services/ai_service.py", line 71, in generate_card_image
+    {"text": self.negative_prompt, "weight": -1}
+AttributeError: 'AICardGenerator' object has no attribute 'negative_prompt'
+ERROR 2024-11-10 19:59:44,827 ai_service 45823 6198308864 Error in generate_card: 'AICardGenerator' object has no attribute 'negative_prompt'
+ERROR 2024-11-10 19:59:44,827 views 45823 6198308864 Error in card generation: 'AICardGenerator' object has no attribute 'negative_prompt'
+Traceback (most recent call last):
+  File "/Users/yaya/ai_memo_web3/backend/ai_card_generator/views.py", line 80, in post
+    card_data = generator.generate_card(prompt)
+  File "/Users/yaya/ai_memo_web3/backend/ai_card_generator/services/ai_service.py", line 161, in generate_card
+    image_path = self.generate_card_image(prompt, rarity)
+  File "/Users/yaya/ai_memo_web3/backend/ai_card_generator/services/ai_service.py", line 71, in generate_card_image
+    {"text": self.negative_prompt, "weight": -1}
+AttributeError: 'AICardGenerator' object has no attribute 'negative_prompt'
+Internal Server Error: /api/cards/generate/
+ERROR 2024-11-10 19:59:44,827 log 45823 6198308864 Internal Server Error: /api/cards/generate/
+[10/Nov/2024 19:59:44] "POST /api/cards/generate/ HTTP/1.1" 500 94
+/Users/yaya/ai_memo_web3/backend/ai_card_generator/services/ai_service.py changed, reloading.
+INFO 2024-11-10 20:01:24,401 autoreload 45823 8062391040 /Users/yaya/ai_memo_web3/backend/ai_card_generator/services/ai_service.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 10, 2024 - 19:58:39
+Django version 5.1.3, using settings 'backend.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+INFO 2024-11-10 20:01:24,648 autoreload 47002 8062391040 Watching for file changes with StatReloader
